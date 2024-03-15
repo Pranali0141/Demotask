@@ -1,0 +1,35 @@
+
+<div class="container">
+
+   
+        <form #frm="ngForm" (ngSubmit)="Onsubmit(frm.value)">
+            <!-- <label>Id</label>
+            <input type="number" class="form-control" name="id" placeholder="Enter the Id"  ngModel> -->
+
+            <label>Name:</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter the Name"  ngModel>
+            
+            <label>Color</label>
+            <input type="text" class="form-control" name="data" placeholder="Enter the Name"  ngModel>
+            <br>
+            <button class="btn btn-primary">Submit</button>
+            
+       </form>
+  
+
+    <table class="table">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Color</th>
+        </tr>
+        <tr *ngFor="let item of AllData; let i=index" [style.background-color]="i % 2 === 0 ? 'red' : 'blue'"  >
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.data?.color || "No Color"}}</td>
+        </tr>
+    </table>
+</div>
+<table>
+       
+
